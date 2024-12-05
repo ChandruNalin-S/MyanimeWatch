@@ -44,14 +44,22 @@ const Header = ()=>{
             return video.title.toLowerCase().includes(searchText.current.value.toLowerCase());
           });
 
-          console.log(animeVideo);
+          //console.log(animeVideo);
 
           dispatch(findSearchAnime(animeVideo));
-          
+
           searchText.current.value = null;
 
         }} className="py-3 px-4 m-2 font-semibold text-black bg-customPink rounded-md">Search</button>
-        <button className="px-4 py-3 bg-black text-white font-semibold rounded-md">Top Rating</button>
+        <button onClick={()=>{
+
+          const animeVideo = animeVideoList.filter((video)=>{
+            return video.ranking <= 10;
+          });
+
+          dispatch(findSearchAnime(animeVideo));
+
+        }} className="px-4 py-3 bg-black text-white font-semibold rounded-md">Top Rating</button>
       </div>
     </div>
   )

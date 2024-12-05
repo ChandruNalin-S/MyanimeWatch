@@ -7,3 +7,4 @@ animeWatch site
 - store the data in redux store
 - build body component using api data and design with tailwind css
 - build search feature using redux store
+- add filter feature in header
