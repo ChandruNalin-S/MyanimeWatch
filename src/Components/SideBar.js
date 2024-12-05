@@ -11,13 +11,13 @@ const SideBar = ()=>{
   if(!isMenuView) return;
 
   return (
-    <div className="w-52 p-2 bg-violet-950">
+    <div className="w-52 p-2 bg-opacity-15 text-white font-semibold">
         <button className="p-2 text-white font-bold text-xl m-4">Close menu</button>
         <ul className="mt-5 text-start">
-          <li className="p-2 mb-4 border-b border-b-gray-400 text-white font-semibold">Home</li>
-          <li className="p-2 mb-4 border-b border-b-gray-400 text-white font-semibold">Trending</li>
-          <li className="p-2 mb-4 border-b border-b-gray-400 text-white font-semibold">Popular</li>
-          <li className="p-2 mb-4 border-b border-b-gray-400 text-white font-semibold">Top Rating</li>
+          <li className="p-2 mb-4 border-b border-b-gray-400 ">Home</li>
+          <li className="p-2 mb-4 border-b border-b-gray-400 ">Trending</li>
+          <li className="p-2 mb-4 border-b border-b-gray-400 ">Popular</li>
+          <li className="p-2 mb-4 border-b border-b-gray-400 ">Top Rating</li>
         </ul>
     </div>
   )
