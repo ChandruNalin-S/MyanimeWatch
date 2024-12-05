@@ -4,11 +4,14 @@ import { options, url } from '../utils/Constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAnimeList } from '../utils/animeSlice';
 import MovieContainer from './MovieContainer';
+import SearchResults from './SearchResults';
 
 const Body = () => {
 
 
   const animevideos = useSelector((store)=>store.anime.animeList)
+
+  const showSearchView = useSelector((store)=> store.anime.searchAnime);
 
   const dispatch = useDispatch();
 
@@ -28,13 +31,16 @@ const Body = () => {
 
   return (
     <>
-    <div className='flex bg-darkPurple'>
+    <div className='flex'>
       <div>
         <SideBar />
       </div>
       <div className='ml-4 mt-2'>
         <h2 className='font-bold text-customPink text-2xl mb-4 ml-4'>Top Rating Movie and Series</h2>
-        <MovieContainer/>
+        {
+          showSearchView ? (<SearchResults  videos={showSearchView} />) : (<MovieContainer/>)
+        }
+        
       </div>
     </div>
     </>

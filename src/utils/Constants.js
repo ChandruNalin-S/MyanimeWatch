@@ -10,7 +10,7 @@ export const url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=30&sortBy=
 export const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': '315a66558emshf9ea3e424f7c25cp116fedjsne6c822507b56',
+		'x-rapidapi-key': 'e005dc25a1msh6d7c70d6e7cedd6p169315jsn1f1ee638fc4e',
 		'x-rapidapi-host': 'anime-db.p.rapidapi.com'
 	}
 };

@@ -1,10 +1,7 @@
-import React from "react";
-import MovieList from "./MovieList";
-import { useSelector } from "react-redux";
+import React from 'react'
+import MovieList from './MovieList';
 
-const MovieContainer = ()=>{
-
-  const videos = useSelector((store)=>store.anime.animeList);
+const SearchResults = ({videos}) => {
 
   if(!videos) return;
 
@@ -17,5 +14,4 @@ const MovieContainer = ()=>{
   )
 }
 
-
-export default MovieContainer
+export default SearchResults
