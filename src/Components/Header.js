@@ -15,26 +15,22 @@ const Header = ()=>{
 
   const searchText = useRef(null);
 
-
   const toggleMenu = ()=>{
     dispatch(addOpenMenu());
   }
 
 
   return (
-    <div className="h-[100px] grid grid-flow-col items-center place-content-evenly">
+    <div className="flex flex-col gap-[18px] pt-10 md:flex-row h-[100px] items-center justify-evenly ">
 
-      <div className="flex col-span-4 space-x-4">
-        <img onClick={toggleMenu} className="h-[40px]" src={MENU_URL} alt="menu"/>
-        <a href="/"><img className="h-[40px] w-[164.6px]" src={LOGO_URL} alt="logo"/></a>
+      <div className="flex md:space-x-4 mr-20">  
+
+        <img onClick={toggleMenu} className="ml-2 mr-16 sm:mr-28   md:mr-0 h-[40px] cursor-pointer" src={MENU_URL} alt="menu"/>
+
+        <a href="/"><img className="ml-20 sm:mr-32 md:mr-0 ml-0 h-[40px] w-[164.6px]" src={LOGO_URL} alt="logo"/></a>
       </div>
 
-      <div className="col-span-8">
-
-        { isSearchViewed && <button onClick={()=>{
-          dispatch(removeSearchAnime());
-          searchText.current.value = null;
-        }} className="px-4 py-3 bg-red-600 text-white font-semibold rounded-md">Browse page</button>}
+      <div className="mr-0 ml-1 md:mr-96 mt-0">
 
         <input ref={searchText} className="py-3 px-4 m-2 rounded-md w-96" type="text" placeholder="Search anime..." />
         <button onClick={()=>{
@@ -50,7 +46,15 @@ const Header = ()=>{
 
           searchText.current.value = null;
 
-        }} className="py-3 px-4 m-2 font-semibold text-black bg-customPink rounded-md">Search</button>
+        }} className=" ml-[186px] font-semibold text-black bg-customPink rounded-md sm:ml-[10px] 
+          md:ml-0 py-3 px-4 m-2">Search</button>
+
+{isSearchViewed && <button onClick={()=>{
+          dispatch(removeSearchAnime());
+          searchText.current.value = null;
+        }} className=" bg-red-600 text-white font-semibold rounded-md md: px-4 py-3 mr-2">Browse page</button>}
+
+
         <button onClick={()=>{
 
           const animeVideo = animeVideoList.filter((video)=>{
@@ -59,7 +63,7 @@ const Header = ()=>{
 
           dispatch(findSearchAnime(animeVideo));
 
-        }} className="px-4 py-3 bg-black text-white font-semibold rounded-md">Top Rating</button>
+        }} className="py-[13px] px-5 bg-black text-white font-semibold rounded-md">Top Rating</button>
       </div>
     </div>
   )

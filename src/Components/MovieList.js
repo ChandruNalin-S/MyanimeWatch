@@ -1,9 +1,15 @@
 
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const MovieList = ({img,title,genres,type}) => {
+
+
+  const isMenuOpen = useSelector((store)=>store.app.isMenuOpen);
+
+
   return (
-    <div className="relative w-64 rounded-sm overflow-hidden shadow-lg ml-6 mb-6">
+    <div className={"ml-2 relative rounded-sm overflow-hidden shadow-lg  h-72 w-[45%] mb-6 sm:w-[40%]  md:w-64 h-full ml-2 "+(isMenuOpen && "w-[90%] sm:w-[40%]")}>
       <img
       src={img}
       alt="poster"
